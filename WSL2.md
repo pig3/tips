@@ -15,7 +15,13 @@ Ubuntu-20.04を起動
 $ sudo apt update
 $ sudo apt upgrade
 $ sudo apt install python-is-python3 mlocate
+
+$ sudo apt install docker.io
+$ sudo usermod -a -G docker user1
+
 ```
+
+
 
 ## Windows Terminal
 [setting.json]
@@ -55,3 +61,29 @@ $ code .
 ```
 
 ```rm /etc/wsl.conf```など色々いじっていたらfishが何も言わなくなった。理由は不明。
+
+## tmux
+マウス選択でコピー
+```
+bind-key    -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-selection-and-cancel 'cat | clip.exe'
+```
+https://qiita.com/yujiG/items/b6971684dd97235f73f9
+
+clip.exeでクリップボードにデータを送れる（逆はclip.exeではできない）
+https://kashewnuts.github.io/2020/06/11/wsl2.html
+https://www.atmarkit.co.jp/ait/articles/1903/14/news060.html
+
+
+https://github.com/zchee/tmux-ja/blob/master/tmux-ja.rst
+https://qh73xebitbucketorg.readthedocs.io/ja/latest/2.Tools/tmux/tips/
+https://blog.monochromegane.com/blog/2013/12/12/tmux-no-prefix/
+
+## X
+MobaXTermが簡単
+https://qiita.com/vega77/items/f00323e8ce64bfa1fdd6
+
+
+
+## Docker
+systemctl
+https://github.com/DamionGans/ubuntu-wsl2-systemd-script
